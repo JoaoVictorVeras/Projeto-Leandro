@@ -9,10 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- BARRA PRETA -->
 <div class="top-bar">
 
-    <!-- FALE CONOSCO -->
     <a onclick="abrirContato()">
 
         <i class="fa-brands fa-whatsapp"></i>
@@ -21,7 +19,6 @@
 
     </a>
 
-    <!-- ACESSIBILIDADE -->
     <a onclick="abrirAcessibilidade()">
 
         <i class="fa-solid fa-universal-access"></i>
@@ -49,10 +46,8 @@
     </header>
 
 
-<!-- MENU DE ACESSIBILIDADE -->
 <div class="acessibilidade" id="menuAcessibilidade">
 
-    <!-- AUMENTAR -->
     <button onclick="aumentarFonte()">
 
         <i class="fa-solid fa-plus"></i>
@@ -61,7 +56,6 @@
 
     </button>
 
-    <!-- DIMINUIR -->
     <button onclick="diminuirFonte()">
 
         <i class="fa-solid fa-minus"></i>
@@ -70,7 +64,6 @@
 
     </button>
 
-    <!-- CONTRASTE -->
     <button onclick="contraste()">
 
         <i class="fa-solid fa-circle-half-stroke"></i>
@@ -79,7 +72,6 @@
 
     </button>
 
-    <!-- DESTACAR LINKS -->
     <button onclick="destacarLinks()">
 
         <i class="fa-solid fa-link"></i>
@@ -88,7 +80,6 @@
 
     </button>
 
-    <!-- FONTE NORMAL -->
     <button onclick="fonteNormal()">
 
         <i class="fa-solid fa-font"></i>
@@ -97,7 +88,6 @@
 
     </button>
 
-    <!-- RESETAR -->
     <button onclick="resetarTudo()">
 
         <i class="fa-solid fa-rotate-left"></i>
@@ -108,17 +98,14 @@
 
 </div>
 
-<!-- CONTEÚDO -->
 <div class="conteudo" id="texto">
 
 </div>
 
 <script>
 
-/* TAMANHO INICIAL */
 let tamanhoFonte = 18;
 
-/* ABRIR MENU */
 function abrirAcessibilidade(){
 
     let menu = document.getElementById("menuAcessibilidade");
@@ -127,7 +114,6 @@ function abrirAcessibilidade(){
 
 }
 
-/* WHATSAPP */
 function abrirContato(){
 
     window.open(
@@ -137,7 +123,6 @@ function abrirContato(){
 
 }
 
-/* AUMENTAR FONTE */
 function aumentarFonte(){
 
     tamanhoFonte += 2;
@@ -147,7 +132,6 @@ function aumentarFonte(){
 
 }
 
-/* DIMINUIR FONTE */
 function diminuirFonte(){
 
     tamanhoFonte -= 2;
@@ -157,21 +141,18 @@ function diminuirFonte(){
 
 }
 
-/* CONTRASTE */
 function contraste(){
 
     document.body.classList.toggle("contraste-ativo");
 
 }
 
-/* DESTACAR LINKS */
 function destacarLinks(){
 
     document.body.classList.toggle("destacar-links");
 
 }
 
-/* FONTE NORMAL */
 function fonteNormal(){
 
     tamanhoFonte = 18;
@@ -181,7 +162,6 @@ function fonteNormal(){
 
 }
 
-/* RESETAR */
 function resetarTudo(){
 
     tamanhoFonte = 18;
