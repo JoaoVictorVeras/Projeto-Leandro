@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Prometheus</title>
+    <link rel="icon" href="imagem/Prometheus.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- BARRA PRETA -->
+<div class="top-bar">
+
+    <!-- FALE CONOSCO -->
+    <a onclick="abrirContato()">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+        Fale Conosco
+
+    </a>
+
+    <!-- ACESSIBILIDADE -->
+    <a onclick="abrirAcessibilidade()">
+
+        <i class="fa-solid fa-universal-access"></i>
+
+        Acessibilidade
+
+    </a>
+
+</div>
+
+    <header>
+    <div class="menu-principal">
+      <div class="logo" onclick="window.location.href=window.location.pathname" style="cursor: pointer;">
+        <img src="imagem/Prometheus.jpg" alt="Prometheus">
+    </div>
+
+      <nav>
+        <a href="Quem_somos.html"> Quem somos</a> 
+        <a href="Como_ajudar.html">Como ajudar</a>
+        <a href="Trabalhe_conosco.html">Trabalhe conosco</a>
+      </nav>
+
+      <a class="botao-doar" href="Doar_agora.html" target="_blank">Doe agora</a>
+    </div>
+    </header>
+
+
+<!-- MENU DE ACESSIBILIDADE -->
+<div class="acessibilidade" id="menuAcessibilidade">
+
+    <!-- AUMENTAR -->
+    <button onclick="aumentarFonte()">
+
+        <i class="fa-solid fa-plus"></i>
+
+        Aumentar fonte
+
+    </button>
+
+    <!-- DIMINUIR -->
+    <button onclick="diminuirFonte()">
+
+        <i class="fa-solid fa-minus"></i>
+
+        Diminuir fonte
+
+    </button>
+
+    <!-- CONTRASTE -->
+    <button onclick="contraste()">
+
+        <i class="fa-solid fa-circle-half-stroke"></i>
+
+        Contraste
+
+    </button>
+
+    <!-- DESTACAR LINKS -->
+    <button onclick="destacarLinks()">
+
+        <i class="fa-solid fa-link"></i>
+
+        Destacar links
+
+    </button>
+
+    <!-- FONTE NORMAL -->
+    <button onclick="fonteNormal()">
+
+        <i class="fa-solid fa-font"></i>
+
+        Fonte normal
+
+    </button>
+
+    <!-- RESETAR -->
+    <button onclick="resetarTudo()">
+
+        <i class="fa-solid fa-rotate-left"></i>
+
+        Redefinir
+
+    </button>
+
+</div>
+
+<!-- CONTEÚDO -->
+<div class="conteudo" id="texto">
+
+</div>
+
+<script>
+
+/* TAMANHO INICIAL */
+let tamanhoFonte = 18;
+
+/* ABRIR MENU */
+function abrirAcessibilidade(){
+
+    let menu = document.getElementById("menuAcessibilidade");
+
+    menu.classList.toggle("ativo");
+
+}
+
+/* WHATSAPP */
+function abrirContato(){
+
+    window.open(
+        "https://wa.me/5583993818866",
+        "_blank"
+    );
+
+}
+
+/* AUMENTAR FONTE */
+function aumentarFonte(){
+
+    tamanhoFonte += 2;
+
+    document.getElementById("texto")
+    .style.fontSize = tamanhoFonte + "px";
+
+}
+
+/* DIMINUIR FONTE */
+function diminuirFonte(){
+
+    tamanhoFonte -= 2;
+
+    document.getElementById("texto")
+    .style.fontSize = tamanhoFonte + "px";
+
+}
+
+/* CONTRASTE */
+function contraste(){
+
+    document.body.classList.toggle("contraste-ativo");
+
+}
+
+/* DESTACAR LINKS */
+function destacarLinks(){
+
+    document.body.classList.toggle("destacar-links");
+
+}
+
+/* FONTE NORMAL */
+function fonteNormal(){
+
+    tamanhoFonte = 18;
+
+    document.getElementById("texto")
+    .style.fontSize = "18px";
+
+}
+
+/* RESETAR */
+function resetarTudo(){
+
+    tamanhoFonte = 18;
+
+    document.getElementById("texto")
+    .style.fontSize = "18px";
+
+    document.body.classList.remove("contraste-ativo");
+
+    document.body.classList.remove("destacar-links");
+
+}
+
+</script>
+
+
+  <main>
+    <section class="banner">
+      <div class="conteudo-banner">
+        <h1> Destruição em Gaza</h1>
+        <p>
+          Continuidade dos ataques em Gaza aumenta tensão <br> e agrava crise humanitária entre civis palestinos.
+        </p>
+        <a class="botao-saiba" href="#">Saiba mais</a>
+      </div>
+
+      <div class="bolinhas">
+        <span class="ativa"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const banner = document.querySelector('.banner');
+    const dots = document.querySelectorAll('.bolinhas span');
+    const bannerTitle = document.querySelector('.conteudo-banner h1');
+    const bannerText = document.querySelector('.conteudo-banner p');
+
+    const slides = [
+      {
+        image: 'imagem/gaza3.webp',
+        title: 'Destruição em Gaza',
+        text: 'Continuidade dos ataques em Gaza aumenta tensão e agrava crise humanitária entre civis palestinos.'
+      },
+      {
+        image: 'imagem/gaza2.webp',
+        title: 'A crise continua',
+        text: 'A situação humanitária segue instável e a comunidade internacional pede mais apoio.'
+      },
+      {
+        image: 'imagem/gaza1.jpg',
+        title: 'Impacto na população',
+        text: 'Famílias enfrentam condições extremas enquanto a ajuda humanitária tenta chegar às áreas mais afetadas.'
+      },
+      {
+        image: 'imagem/explosão.webp',
+        title: 'Ajuda emergencial',
+        text: 'Organizações trabalham para levar recursos e suporte médico às regiões mais devastadas.'
+      }
+    ];
+
+    function setSlide(index) {
+      const slide = slides[index];
+      banner.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("${slide.image}")`;
+      bannerTitle.textContent = slide.title;
+      bannerText.textContent = slide.text;
+      dots.forEach((dot, dotIndex) => {
+        dot.classList.toggle('ativa', dotIndex === index);
+      });
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => setSlide(index));
+      dot.setAttribute('tabindex', '0');
+      dot.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          setSlide(index);
+        }
+      });
+    });
+
+    setSlide(0);
+  </script>
+</body>
+</html>

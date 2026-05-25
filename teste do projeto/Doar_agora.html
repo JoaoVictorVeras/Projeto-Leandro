@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Doe Agora - Prometheus</title>
+    <link rel="stylesheet" href="css/Doar_agora.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left"></div>
+
+        <div class="right">
+            <div class="card">
+                <!-- CABEÇALHO COM LOGO -->
+                <div class="logo">
+                    <i class="fas fa-heart"></i> Prometheus
+                </div>
+
+                <!-- TÍTULO E DESCRIÇÃO -->
+                <h1>Você pode ajudar</h1>
+                <p>Sua contribuição pode transformar vidas</p>
+
+                <!-- TIPO DE DOAÇÃO -->
+                <button class="btn red">
+                    <i class="fas fa-gift"></i> Doação Mensal
+                </button>
+
+                <!-- VALORES DE DOAÇÃO -->
+                <div class="values">
+                    <div class="value activeValue" tabindex="0" role="button">R$ 80</div>
+                    <div class="value" tabindex="0" role="button">R$ 45</div>
+                    <div class="value" tabindex="0" role="button">R$ 30</div>
+                </div>
+
+                <!-- INFORMAÇÕES -->
+                <div class="info">
+                    <div class="circle">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <p>Sua doação é 100% segura e seus dados estão protegidos</p>
+                </div>
+
+                <!-- BOTÃO DE AÇÃO -->
+                <button class="btn orange">
+                    <i class="fas fa-arrow-right"></i> Próximo
+                </button>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        const values = document.querySelectorAll('.value');
+        values.forEach(value => {
+            value.addEventListener('click', () => {
+                values.forEach(v => v.classList.remove('activeValue'));
+                value.classList.add('activeValue');
+            });
+            value.addEventListener('keydown', event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    values.forEach(v => v.classList.remove('activeValue'));
+                    value.classList.add('activeValue');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
